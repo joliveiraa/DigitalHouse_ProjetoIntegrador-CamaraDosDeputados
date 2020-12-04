@@ -65,6 +65,11 @@ function blocoDeputado(id, nome, urlFoto, uri, siglaPartido, siglaUf) {
 }
 
 function gerarLinkPagina(pg) {
+  if(!pg){
+    pg = 1;
+  }else{
+    pg = pg;
+  }
   const url = `https://dadosabertos.camara.leg.br/api/v2/deputados?dataInicio=2016-01-01&ordem=ASC&ordenarPor=siglaUF&pagina=${pg}&itens=${qtdaPerfisPorPagina}`;
   return url;
 }
