@@ -55,7 +55,7 @@ function pegarDadosDoDeputado(id) {
         document.getElementById("situacao").innerText = situacao;
 
         let urlFoto = ultimoStatus.urlFoto;
-        let foto = `<img class="img-responsive" src="${urlFoto}" alt="${nome}" title="${nome}">`;
+        let foto = `<img class="img-responsive img-fotoDeputado" src="${urlFoto}" alt="${nome}" title="${nome}">`;
 
         document.getElementById("foto").innerHTML = foto;
 
