@@ -91,7 +91,7 @@ function blocoDeputado(id, nome, urlFoto, uri, siglaPartido, siglaUf) {
               </figure>
           </div>
           <div class="col-md-7">
-              <div class="panel">
+              <div>
 
                  <div class="panel-body">
                    <p>${nome}</p>
