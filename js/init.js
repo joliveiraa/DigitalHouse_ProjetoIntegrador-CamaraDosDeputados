@@ -3,6 +3,12 @@ function pegarPaginaLocalStorage() {
   return pgAtual;
 }
 
+function estaSeguindo(id){
+if(localStorage['acompanharDeputado'].includes(id)){
+    document.getElementById("acompanharBtn"+id).innerHTML="Parar de Acompanhar";
+  }
+
+}
 
 function showTotalDeputados(total) {
   let qtda = total.length;
@@ -21,11 +27,34 @@ function acompanharPerfil(id) {
     if (!localStorage['acompanharDeputado']) dados = [];
     else dados = JSON.parse(localStorage['acompanharDeputado']);
     if (!(dados instanceof Array)) dados = [];
-    dados.push(id);
-    alert('Você agora acompanha esse Perfil!');
+    if (!dados.includes(id)){
+      dados.push(id);
+      alert('Você agora acompanha esse Perfil!');
+  
+      localStorage.setItem('acompanharDeputado', JSON.stringify(dados));
+      document.getElementById("acompanharBtn"+id).innerHTML="Parar de Acompanhar";
 
-    localStorage.setItem('acompanharDeputado', JSON.stringify(dados));
+    }else{
+      pararDeacompanharPerfil(id)
+      document.getElementById("acompanharBtn"+id).innerHTML="Acompanhar Mandato";
+      alert('Você não acompanha mais esse Perfil!');
+    }
+
   }
+}
+
+function pararDeacompanharPerfil(id) {
+  //pego todos os itens   
+  let listaDeputado =  JSON.parse(localStorage.getItem("acompanharDeputado"));
+  //quem vai sai
+  let removerDeputado = id;     
+
+  for(let i = 0; i < listaDeputado.length;i++){
+      if(listaDeputado[i] == removerDeputado){        
+          let splice = listaDeputado.splice(i,1);  
+      }
+  }
+  localStorage.setItem('acompanharDeputado', JSON.stringify(listaDeputado));
 }
 
 function blocoDeputado(id, nome, urlFoto, uri, siglaPartido, siglaUf) {
@@ -54,7 +83,7 @@ function blocoDeputado(id, nome, urlFoto, uri, siglaPartido, siglaUf) {
           <div class="col-md-12">
               <div class="btn-group">
                   <a class="btn btn-primary btn-sm" href="deputado.html?id=${id}">Acessar Perfil</a>
-                   <button class="btn btn-warning btn-sm" onclick="acompanharPerfil(${id})">Acompanhar Mandato</button>
+                   <button id="acompanharBtn${id}" class="btn btn-warning btn-sm" onclick="acompanharPerfil(${id})">Acompanhar Mandato</button>
                 </div>
           </div>
       </div>
@@ -119,6 +148,7 @@ function pegarDadosApi(url) {
 
         document.getElementById("demo").innerHTML += bloco;
 
+        estaSeguindo(id)
 
       }
 
