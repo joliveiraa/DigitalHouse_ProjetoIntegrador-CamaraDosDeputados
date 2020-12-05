@@ -154,6 +154,8 @@ function tratarLinkPagina(pg) {
   document.location.reload(true);
 }
 
+pegarTotalDeDeputados()
+
 
 const totalResultados = pegarTotalDeDeputadosLocalStorage();
 const qtdaPerfisPorPagina = 32;
