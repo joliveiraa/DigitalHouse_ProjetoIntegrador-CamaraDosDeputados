@@ -83,6 +83,7 @@ function pegarTotalDeDeputados() {
     resultados.then(function (res) {
       let parse = JSON.parse(res);
       let dados = parse.dados;
+      console.log(dados);
       showTotalDeputados(dados);
     });
   });
