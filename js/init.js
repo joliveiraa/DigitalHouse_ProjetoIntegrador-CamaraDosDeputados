@@ -4,10 +4,11 @@ function pegarPaginaLocalStorage() {
 }
 
 function estaSeguindo(id){
+  if(localStorage && localStorage['acompanharDeputado']){
 if(localStorage['acompanharDeputado'].includes(id)){
     document.getElementById("acompanharBtn"+id).innerHTML="Parar de Acompanhar";
   }
-
+}
 }
 
 function showTotalDeputados(total) {
