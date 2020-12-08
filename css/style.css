@@ -8,6 +8,22 @@ body {
   margin-bottom: 0px;
 }
 
+.navbar-default .navbar-brand{
+  color: black;
+  font-size: 20px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: black;
+  font-size: 15px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: black;
+  font-size: 15px;
+}
+
+
 .centralizar {
   position: relative;
   display: block;
@@ -172,7 +188,7 @@ body {
 }
 
 .perfil-deputado {
-  border: solid 1px #ccc;
+  border: solid 2px #ccc;
   padding: 4px;
 }
 .perfil-deputado figure {
@@ -209,6 +225,7 @@ body {
   align-items: center;
 }
 .lista-estado h3 {
+  text-align: center;
   font-size: 4vw;
   color: #fff;
 }
@@ -335,3 +352,5 @@ body {
   }
 
   .grupo{padding:5px;}
+
+
