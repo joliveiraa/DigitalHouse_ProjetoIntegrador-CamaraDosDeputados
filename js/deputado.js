@@ -179,3 +179,41 @@ function templateDespesas(
     </table>`;
   return template;
 }
+
+function frentesParlamentares(id) {
+  fetch(
+    `https://dadosabertos.camara.leg.br/api/v2/deputados/${id}/frentes`
+  ).then((response) => {
+    let resultados = response.text();
+
+    resultados.then(function (res) {
+      let parse = JSON.parse(res);
+      let dados = parse.dados;
+      //console.log(dados);
+
+      for (let i = 2; i<dados.length; i+=4) {
+        console.log(dados[i]);
+
+        let nomeFrente = dados[i].titulo;
+
+        let template = templateFrentes(
+          nomeFrente
+        );
+        document.getElementById("frentes").innerHTML += template;
+      }
+    });
+  });
+}
+
+frentesParlamentares(busca);
+
+despesasDeputado(busca);
+
+function templateFrentes(
+  nomeFrente
+) {
+  let template = `
+    <p>Titulo: <strong id="nomeFrente">${nomeFrente}</strong></p>  
+  `
+  return template;
+}
