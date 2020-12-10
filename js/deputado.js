@@ -213,7 +213,7 @@ function templateFrentes(
   nomeFrente
 ) {
   let template = `
-    <p>Titulo: <strong id="nomeFrente">${nomeFrente}</strong></p>  
+    <p><strong id="nomeFrente">${nomeFrente}</strong></p>  
   `
   return template;
 }
