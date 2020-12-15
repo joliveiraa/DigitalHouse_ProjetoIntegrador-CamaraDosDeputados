@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acompanhando Deputados - Projeto Integrador</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <!--menu-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Deputados</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="acompanhando.html">Deputados Acompanhados</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!--menu-->
+
+    <section id="banner-superior">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 centralizar text-center">
+                    <h1>Dados Abertos da Câmara</h1>
+
+                    <form name="form" id="form" class="text-left" method="get" action="resultado.html">
+                        <div class="row">
+
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <label>Nome do Parlamentar</label>
+                                    <input type="text" name="nome" id="nome" class="form-control"
+                                        placeholder="Nome do Parlamentar" >
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <select name="uf" id="uf" class="form-control">
+                                        <option disabled value="">Selecione</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Inicio do Mandato</label>
+                                    <select name="inicio_mandato" id="inicio_mandato" class="form-control" required>
+                                        <option disabled value="">Selecione</option>
+                                        <option value="2010-01-01">2010</option>
+                                        <option value="2011-01-01">2011</option>
+                                        <option value="2012-01-01">2012</option>
+                                        <option value="2013-01-01">2013</option>
+                                        <option value="2014-01-01">2014</option>
+                                        <option value="2015-01-01">2015</option>
+                                        <option value="2016-01-01">2016</option>
+                                        <option value="2017-01-01">2017</option>
+                                        <option value="2018-01-01">2018</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Sexo</label>
+                                    <select name="sexo" id="sexo" class="form-control">
+                                        <option disabled value="">Selecione</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label style="color:transparent">.</label>
+                                <button class="btn btn-block" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="conteudo-blocos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Fique Atualizado</h2>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel box-shadow-inverse">
+                        <div class="panel-heading"><span>1</span></div>
+                        <div class="panel-body">
+                            <h3>Pesquise por Deputados</h3>
+                            <p>Utilize nosso sistema para pesquisar deputados e analisar como o parlamentar esta utilizando os recursos públicos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">                    
+                    <div class="panel box-shadow-inverse">
+                        <div class="panel-heading"><span>2</span></div>
+                        <div class="panel-body">
+                            <h3>Acompanhe o Mandato</h3>
+                            <p>Saiba como anda seu deputado fazendo o acompanhamento através de nosso sistema, de maneira simples e rapida</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">                   
+                    <div class="panel box-shadow-inverse">
+                        <div class="panel-heading"><span>3</span></div>
+                        <div class="panel-body">
+                            <h3>Cobre ou Contate</h3>
+                            <p>Use o email do deputado(a) ou o telefone do gabinete para entrar em contato direto com o parlamentar</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="bloco-deputados-home">
+
+        <div class="lista-estado">
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-md-2 col-xs-4">
+                        <img class="img-responsive img-thumbnail" src="img/minas.png" alt="">
+                    </div>-->
+                    <div class="col-md-10 col-xs-8">
+                        <h3>Deputados</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           <!--conteudo central-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="demo"></div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12 text-center">
+                            <div id="paginas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!--conteudo central-->
+
+
+    </section>
+
+    <footer id="rodape">
+        <div class="container">
+            <div id="go-to-top">
+              <span class="glyphicon glyphicon-arrow-up"></span>   
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy Projeto Integrador - DH 2020</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/uteis.js"></script>
+</body>
+
+</html>
